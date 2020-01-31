@@ -30,7 +30,7 @@ public class IntegrationTests {
         HttpEntity<MultiValueMap<String, Object>> requestEntity
                 = new HttpEntity<>(body, headers);
 
-        restTemplate.postForEntity("/uploadForm", requestEntity, String.class);
+        restTemplate.postForEntity("/inputForm", requestEntity, String.class);
         ResponseEntity responseEntity = restTemplate.getForEntity("/images/" , String.class, "");
         assertEquals("image/jpeg", responseEntity.getHeaders().get("Content-Type").get(0));
     }
